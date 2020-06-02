@@ -1,5 +1,5 @@
 {
-   "users": [
+  "users": [
     {
 
       "displayName": "[TEST] Bridgette Harmon (Local account)",
@@ -7,47 +7,40 @@
       "surname": "Harmon",
       "identities": [
         {
-            "signInType": "emailAddress",
-            "issuerAssignedId": "bridgette@wingtiptoys.com"
+          "signInType": "federated",
+          "issuer": "fwmurphy.com",
+          "issuerAssignedId": "345098234"
         }
       ],
       "password": "Pass!w0rd"
     },
     {
 
-      "displayName": "[TEST] Curt Foret (Social)",
-      "givenName": "Curt",
-      "surname": "Foret",
+      "displayName": "[TEST] John Johnson ",
+      "givenName": "John ",
+      "surname": "Johnson",
       "identities": [
         {
-            "signInType": "federated",
-            "issuer": "facebook.com",
-            "issuerAssignedId": "0987654321"
-        }],
-      "otherMails": ["curt@fabrikam.com"]
+          "signInType": "federated",
+          "issuer": "fwmurphy.com",
+          "issuerAssignedId": "12343245"
+        }
+      ],
+      "password": "Pass!w0rd"
     },
     {
 
-      "displayName": "[TEST] Edith Porter (Local and social)",
-      "givenName": "Edith",
-      "surname": "Porter",
+      "displayName": "[TEST] Chris McLean",
+      "givenName": "Chris",
+      "surname": "McLean",
       "identities": [
         {
-            "signInType": "federated",
-            "issuer": "google.com",
-            "issuerAssignedId": "1234567890"
-        },
-        {
           "signInType": "federated",
-          "issuer": "github.com",
-          "issuerAssignedId": "abcdef"
-        },
-        {
-            "signInType": "emailAddress",
-            "issuerAssignedId": "edith@wingtiptoys.com"
+          "issuer": "fwmurphy.com",
+          "issuerAssignedId": "87691234"
         }
       ],
-      "password": "1234"
+      "password": "Pass!w0rd"
     }
   ]
 }

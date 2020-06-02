@@ -12,6 +12,7 @@ namespace b2c_ms_graph
 {
     class UserService
     {
+        // lists all of the users registered under the current application
         public static async Task ListUsers(GraphServiceClient graphClient)
         {
             Console.WriteLine("Getting list of users...");
@@ -309,7 +310,7 @@ namespace b2c_ms_graph
                     Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented));
                 }
             }
-            catch (ServiceException ex) 
+            catch (ServiceException ex)
             {
                 if (ex.StatusCode == System.Net.HttpStatusCode.BadRequest)
                 {
@@ -318,13 +319,37 @@ namespace b2c_ms_graph
                     Console.WriteLine();
                     Console.WriteLine(ex.Message);
                     Console.ResetColor();
-                }                
+                }
             }
             catch (Exception ex)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(ex.Message);
                 Console.ResetColor();
+            }
+        }
+
+        public static async Task UserFunctionTest(GraphServiceClient graphClient)
+        {
+            Console.WriteLine("This function is now working properly chief.");
+            Console.WriteLine("Getting list of users...");
+
+            // Get all users (one page)
+            var result = await graphClient.Users
+                .Request()
+                .Select(e => new
+                {
+                    e.DisplayName,
+                    e.Id,
+                    e.Identities,
+                    e.Photo
+                })
+                .GetAsync();
+
+            foreach (var user in result.CurrentPage)
+            {
+                Console.WriteLine(JsonConvert.SerializeObject(user));
+                Console.WriteLine(user.Photo);
             }
         }
     }

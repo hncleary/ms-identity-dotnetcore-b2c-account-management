@@ -61,6 +61,9 @@ namespace b2c_ms_graph
                         case "8":
                             await UserService.ListUsersWithCustomAttribute(graphClient, config.B2cExtensionAppClientId);
                             break;
+                        case "9":
+                            await UserService.UserFunctionTest(graphClient);
+                            break;
                         case "help":
                             Program.PrintCommands();
                             break;
@@ -99,6 +102,8 @@ namespace b2c_ms_graph
             Console.WriteLine("[6]      Create users (bulk import)");
             Console.WriteLine("[7]      Create user with custom attributes and show result");
             Console.WriteLine("[8]      Get all users (one page) with custom attributes");
+            Console.WriteLine("--------------------------------------------------------");
+            Console.WriteLine("[9]      Custom User Functions Testing");
             Console.WriteLine("[help]   Show available commands");
             Console.WriteLine("[exit]   Exit the program");
             Console.WriteLine("-------------------------");
