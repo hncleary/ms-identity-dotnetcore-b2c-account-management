@@ -64,6 +64,9 @@ namespace b2c_ms_graph
                         case "9":
                             await UserService.UserFunctionTest(graphClient);
                             break;
+                        case "10":
+                            await UserService.UserFunctionTest2(graphClient);
+                            break;
                         case "help":
                             Program.PrintCommands();
                             break;
@@ -103,7 +106,9 @@ namespace b2c_ms_graph
             Console.WriteLine("[7]      Create user with custom attributes and show result");
             Console.WriteLine("[8]      Get all users (one page) with custom attributes");
             Console.WriteLine("--------------------------------------------------------");
-            Console.WriteLine("[9]      Custom User Functions Testing");
+            Console.WriteLine("[9]      List Username, id, phone, email");
+            Console.WriteLine("[10]      List Username, id, phone, email");
+            Console.WriteLine("===================");
             Console.WriteLine("[help]   Show available commands");
             Console.WriteLine("[exit]   Exit the program");
             Console.WriteLine("-------------------------");

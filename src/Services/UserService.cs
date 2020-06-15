@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Graph;
 using Newtonsoft.Json;
@@ -158,7 +159,6 @@ namespace b2c_ms_graph
                 Console.ResetColor();
             }
         }
-
         public static async Task SetPasswordByUserId(GraphServiceClient graphClient)
         {
             Console.Write("Enter user object ID: ");
@@ -346,11 +346,43 @@ namespace b2c_ms_graph
                 })
                 .GetAsync();
 
+            int i = 0;
             foreach (var user in result.CurrentPage)
             {
-                Console.WriteLine(JsonConvert.SerializeObject(user));
-                Console.WriteLine(user.Photo);
+                i++;
+                string userDisplayName = user.DisplayName ?? "null";
+                string userID = user.Id ?? "null";
+                //IEnumerable<string> userPhone = (user.BusinessPhones != null) ? user.BusinessPhones : new List<string>() { "123" };
+                //string userPhone = (user.BusinessPhones != null) ? "something" : "(###)###-####";
+                string userPhoneNumber = user.MobilePhone ?? "(###)###-####";
+                Console.WriteLine("User #" + i + ": " + "Name: " + userDisplayName + " id: " + userID + " phone: " + userPhoneNumber);
+                foreach (var ident in user.Identities)
+                {
+                    if (ident.SignInType == "userPrincipalName")
+                    {   
+                        string assignedId = ident.IssuerAssignedId;
+                        
+                        if (assignedId.Contains("#EXT#"))
+                        {
+                            assignedId = assignedId.Substring(0, assignedId.IndexOf('#'));
+                            
+                        }
+                        Console.WriteLine("Account Email: " + assignedId);
+                        // the parse assigned Id should be equivalent to a userprincipalname
+                        //Console.WriteLine("Account Email: " + user.UserPrincipalName);
+
+                    };
+                }
             }
         }
+
+        public static async Task UserFunctionTest2(GraphServiceClient graphClient)
+        {
+            Console.WriteLine("Hello chief this is urgent: the function is now working.");
+        
+        
+        }
+
+
     }
 }

@@ -2,42 +2,42 @@
   "users": [
     {
 
-      "displayName": "[TEST] Bridgette Harmon (Local account)",
-      "givenName": "Bridgette",
-      "surname": "Harmon",
+      "displayName": "[TEST] Juanita Juanson",
+      "givenName": "Juanita",
+      "surname": "Juanson",
       "identities": [
         {
           "signInType": "federated",
           "issuer": "fwmurphy.com",
-          "issuerAssignedId": "345098234"
+          "issuerAssignedId": "198237"
         }
       ],
       "password": "Pass!w0rd"
     },
     {
 
-      "displayName": "[TEST] John Johnson ",
-      "givenName": "John ",
-      "surname": "Johnson",
+      "displayName": "[TEST] Babe Ruth",
+      "givenName": "Babe",
+      "surname": "Ruth",
       "identities": [
         {
           "signInType": "federated",
           "issuer": "fwmurphy.com",
-          "issuerAssignedId": "12343245"
+          "issuerAssignedId": "12341345"
         }
       ],
       "password": "Pass!w0rd"
     },
     {
 
-      "displayName": "[TEST] Chris McLean",
-      "givenName": "Chris",
-      "surname": "McLean",
+      "displayName": "[TEST] Jackie Chan",
+      "givenName": "Jackie",
+      "surname": "Chan",
       "identities": [
         {
           "signInType": "federated",
           "issuer": "fwmurphy.com",
-          "issuerAssignedId": "87691234"
+          "issuerAssignedId": "23452342476
         }
       ],
       "password": "Pass!w0rd"
